@@ -1,0 +1,6 @@
+{
+  "name": "América Latina Perícias",
+  "description": "Site institucional completo e moderno da América Latina Perícias e Vistorias Cautelares em Pelotas - RS. Mais de 46 anos de experiência em perícias veiculares e laudos periciais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
