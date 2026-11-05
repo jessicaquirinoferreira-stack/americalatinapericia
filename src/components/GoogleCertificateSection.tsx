@@ -241,7 +241,7 @@ export default function GoogleCertificateSection() {
                     </div>
                     <span className="text-neutral-300 font-semibold">Avaliação: 5,0</span>
                     <span className="text-neutral-400">· 128 comentários</span>
-                    <span className="text-neutral-400 hidden sm:inline">· Preço: R$ 260,00</span>
+                    <span className="text-neutral-400 hidden sm:inline">· Preço: A partir de R$ 260,00 (Completa R$ 460,00)</span>
                   </div>
 
                   {/* Meta Description Snippet */}
@@ -252,10 +252,10 @@ export default function GoogleCertificateSection() {
                   {/* Google Sitelinks */}
                   <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/10 text-xs">
                     <a
-                      href="#servicos"
+                      href="#precos"
                       className="text-[#8ab4f8] hover:underline flex items-center gap-1 font-medium"
                     >
-                      <span>Vistoria Cautelar (R$ 260)</span>
+                      <span>Vistorias (R$ 260 a R$ 460)</span>
                     </a>
                     <a
                       href="#equipamentos"

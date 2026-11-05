@@ -86,8 +86,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#servicos" className="hover:text-[#d4af37] transition-colors">
-                  Vistoria Cautelar Estrutural (R$ 260)
+                <a href="#precos" className="hover:text-[#d4af37] transition-colors">
+                  Vistoria Cautelar Estrutural (a partir de R$ 260)
+                </a>
+              </li>
+              <li>
+                <a href="#precos" className="hover:text-[#d4af37] transition-colors font-semibold text-neutral-300">
+                  Vistoria Cautelar Completa Linha Leve (R$ 460)
+                </a>
+              </li>
+              <li>
+                <a href="#precos" className="hover:text-[#d4af37] transition-colors">
+                  Opção Adicional: Scanner & Motor (+ R$ 200)
                 </a>
               </li>
               <li>

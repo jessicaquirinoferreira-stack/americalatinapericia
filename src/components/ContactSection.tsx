@@ -7,7 +7,7 @@ export default function ContactSection() {
     nome: '',
     telefone: '',
     veiculo: '',
-    servico: 'Vistoria Cautelar Completa (R$ 260)',
+    servico: 'Vistoria Cautelar Estrutural (R$ 260)',
     mensagem: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -184,11 +184,13 @@ export default function ContactSection() {
                     onChange={(e) => setFormData({ ...formData, servico: e.target.value })}
                     className="w-full bg-[#1b1b1b] border border-white/10 focus:border-[#d4af37] rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white focus:outline-none transition-colors"
                   >
-                    <option value="Vistoria Cautelar Completa (R$ 260)">Vistoria Cautelar Completa (R$ 260)</option>
+                    <option value="Vistoria Cautelar Estrutural (a partir de R$ 260)">Vistoria Cautelar Estrutural (a partir de R$ 260,00)</option>
+                    <option value="Vistoria Cautelar Completa Linha Leve (R$ 460)">Vistoria Cautelar Completa Linha Leve (R$ 460,00)</option>
+                    <option value="Opção Adicional Motor & Scanner (+ R$ 200)">Opção Adicional: Motor, Scanner e Bateria (+ R$ 200,00)</option>
                     <option value="Exame Estrutural 3D & Ultrassom">Exame Estrutural 3D & Ultrassom</option>
                     <option value="Laudo Pericial Judicial">Laudo Pericial Judicial</option>
                     <option value="Simulação de Acidente">Simulação de Acidente</option>
-                    <option value="Auditoria de Frotas">Auditoria de Frotas</option>
+                    <option value="Auditoria de Frotas">Auditoria de Frotas Corporativas</option>
                     <option value="Vistoria Linha Pesada / Máquinas">Vistoria Linha Pesada / Máquinas</option>
                   </select>
                 </div>

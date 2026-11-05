@@ -23,10 +23,10 @@ export default function FloatingElements() {
   }, []);
 
   const quickQuestions = [
-    { label: 'Agendar Vistoria (R$ 260)', text: 'Gostaria de agendar a vistoria cautelar de R$ 260.' },
-    { label: 'O que é examinado?', text: 'Quais itens são analisados no laudo cautelar?' },
-    { label: 'Horários e Endereço', text: 'Qual o endereço em Pelotas e horários de funcionamento?' },
-    { label: 'Falar com Perito Humano', text: 'Gostaria de falar com um perito técnico.' }
+    { label: 'Vistoria Estrutural (R$ 260)', text: 'Gostaria de agendar a vistoria cautelar estrutural de R$ 260.' },
+    { label: 'Vistoria Completa (R$ 460)', text: 'Gostaria de agendar a vistoria completa linha leve de R$ 460.' },
+    { label: 'Opção Scanner (+ R$ 200)', text: 'Como funciona o adicional de R$ 200 com estetoscópio e scanner?' },
+    { label: 'Atendimento no local?', text: 'Vocês realizam atendimento no local onde o carro está?' }
   ];
 
   const handleSendPrompt = (questionText: string) => {
@@ -39,12 +39,14 @@ export default function FloatingElements() {
     // Instant bot response
     setTimeout(() => {
       let botResponse = 'Perfeito! Nossos peritos estão disponíveis para atendê-lo agora.';
-      if (questionText.includes('260') || questionText.includes('agendar')) {
-        botResponse = 'Excelente escolha! Nossa vistoria cautelar custa R$ 260,00 e inclui medição peça por peça, teste de enchente, esquadro e histórico documental completo. Vamos agendar seu horário pelo WhatsApp?';
-      } else if (questionText.includes('itens') || questionText.includes('examinado')) {
-        botResponse = 'Examinamos 28 itens periciais: longarinas, espessura de pintura, numeração de motor/chassi, histórico de leilão/sinistro, scanner eletrônico e suspensão.';
-      } else if (questionText.includes('endereço') || questionText.includes('horários')) {
-        botResponse = 'Estamos na R. Santos Dumont, 551 - Centro, Pelotas - RS. Atendemos de segunda a sexta das 08:30 às 11:30 e das 13:30 às 18:30.';
+      if (questionText.includes('460')) {
+        botResponse = 'A Vistoria Cautelar Completa Linha Leve custa R$ 460,00 e oferece a maior profundidade técnica do Brasil: laudo completo reconhecido por conselhos periciais, diagnóstico eletrônico, estetoscópio de motor e total confiabilidade documental. Agilize enviando "SIM" no WhatsApp!';
+      } else if (questionText.includes('260') || questionText.includes('estrutural')) {
+        botResponse = 'Nossa Vistoria Cautelar Estrutural custa apenas R$ 260,00 e inclui medição peça por peça com medidor digital e detector magnético, análise de fluidos, teste de enchente e consulta documental completa.';
+      } else if (questionText.includes('200') || questionText.includes('scanner')) {
+        botResponse = 'A Opção Adicional de R$ 200,00 inclui análise acústica de motor com estetoscópio pericial, diagnóstico eletrônico total via scanner multimarcas, teste de condutividade de bateria e hodometria via scanner.';
+      } else if (questionText.includes('local')) {
+        botResponse = 'Sim! Temos atendimento ágil e prático: agilizamos seu laudo cautelar e vamos até o local onde o veículo estiver (garagem, loja ou residência).';
       }
 
       setChatMessages((prev) => [
@@ -127,7 +129,7 @@ export default function FloatingElements() {
               <div className="w-2 h-2 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
               <div>
                 <p className="text-xs font-semibold text-white">
-                  Dúvidas sobre a vistoria de R$ 260?
+                  Dúvidas sobre laudos (R$ 260 a R$ 460)?
                 </p>
                 <p className="text-[11px] text-neutral-300 mt-0.5">
                   Clique aqui para falar com nossa assistente virtual.

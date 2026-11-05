@@ -36,10 +36,10 @@ export default function Hero() {
             <div className="flex items-center gap-2 mb-4 text-xs font-semibold text-[#d4af37]">
               <span className="flex items-center gap-1 bg-[#161616] border border-[#d4af37]/30 px-3 py-1 rounded-md">
                 <Award className="w-3.5 h-3.5 text-[#d4af37]" />
-                <span>Mais de 46 anos de tradição em Pelotas - RS</span>
+                <span>A Vistoria Cautelar Mais Técnica do Brasil</span>
               </span>
               <span className="text-white/40 hidden sm:inline">·</span>
-              <span className="hidden sm:inline text-neutral-400">Referência em Perícias Técnicas</span>
+              <span className="hidden sm:inline text-neutral-400">46+ anos de tradição em Pelotas - RS</span>
             </div>
 
             {/* Official Logo Banner */}
@@ -61,77 +61,108 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle with Price Highlight */}
-            <div className="mb-5 inline-flex items-center flex-wrap gap-2 text-lg sm:text-xl font-bold text-neutral-200">
-              <span>Apenas</span>
-              <span className="text-[#d4af37] text-2xl sm:text-3xl font-extrabold px-2 py-0.5 bg-[#d4af37]/10 rounded border border-[#d4af37]/30">
+            <div className="mb-5 flex flex-wrap items-center gap-2 text-base sm:text-lg font-bold text-neutral-200">
+              <span>Vistorias a partir de</span>
+              <span className="text-[#d4af37] text-xl sm:text-2xl font-black px-2.5 py-0.5 bg-[#d4af37]/10 rounded border border-[#d4af37]/30">
                 R$ 260,00
               </span>
-              <span className="text-white">Vistoria CAUTELAR estrutural completa.</span>
+              <span className="text-neutral-400">|</span>
+              <span>Vistoria Completa Linha Leve por</span>
+              <span className="text-white text-xl sm:text-2xl font-black px-2.5 py-0.5 bg-white/10 rounded border border-white/20">
+                R$ 460,00
+              </span>
             </div>
 
             {/* Quick Service Text */}
-            <p className="text-neutral-300 text-sm sm:text-base mb-6 leading-relaxed">
-              Atendimento <strong className="text-white font-bold">RÁPIDO</strong>. Clique aqui ou chame no WhatsApp{' '}
-              <a
-                href={CONTACT_INFO.whatsappDirectMessage()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#d4af37] font-semibold underline underline-offset-4 hover:text-[#f3cf65]"
-              >
-                53 98100-7069
-              </a>{' '}
-              /{' '}
-              <a
-                href={CONTACT_INFO.whatsappDirectMessage('Olá! Gostaria de falar com o plantão de vistorias.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#d4af37] font-semibold underline underline-offset-4 hover:text-[#f3cf65]"
-              >
-                53 98118-7344
-              </a>
-            </p>
-
-            {/* Bullet Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8 bg-[#121212]/80 border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm">
-              {inspectionPoints.map((point, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
-                  <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
-                  <span>{point}</span>
-                </div>
-              ))}
+            <div className="mb-6 bg-gradient-to-r from-[#181818] to-transparent border-l-2 border-[#d4af37] pl-3 py-2">
+              <p className="text-neutral-200 text-xs sm:text-sm font-medium mb-1">
+                <strong className="text-[#d4af37]">ATENDIMENTO ÁGIL E PRÁTICO:</strong> Agilizamos seu laudo cautelar, <strong className="text-white">vamos até o local</strong>.
+              </p>
+              <p className="text-neutral-300 text-xs sm:text-sm">
+                Envie a mensagem <strong className="text-emerald-400 font-bold">"SIM"</strong> para nosso WhatsApp{' '}
+                <a
+                  href={CONTACT_INFO.whatsappSimLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#d4af37] font-semibold underline underline-offset-4 hover:text-[#f3cf65]"
+                >
+                  53 98100-7069
+                </a>{' '}
+                /{' '}
+                <a
+                  href={CONTACT_INFO.whatsappSimLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#d4af37] font-semibold underline underline-offset-4 hover:text-[#f3cf65]"
+                >
+                  53 98118-7344
+                </a>{' '}
+                e já será atendido!
+              </p>
             </div>
 
-            {/* Authority & Google Rating Statement */}
-            <div className="flex items-center gap-3 mb-8 bg-gradient-to-r from-white/5 to-transparent border-l-2 border-[#d4af37] pl-3 py-1">
-              <div className="flex items-center text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
+            {/* Bullet Highlights Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6 bg-[#121212]/80 border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm">
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
+                <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                <span>Análise de pintura peça por peça (medidor digital + magnético)</span>
               </div>
-              <p className="text-xs sm:text-sm text-neutral-300">
-                Confira nossa reputação no <strong className="text-white">Google (5.0 Estrelas)</strong>: somos referência por bons serviços e atendimento há mais de{' '}
-                <strong className="text-[#d4af37]">46 anos</strong>.
-              </p>
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
+                <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                <span>Verificação de motor, fluidos, enchente e detecção de clonagem</span>
+              </div>
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
+                <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                <span>Conferência de numerações (chassi/motor), etiquetas e vidros</span>
+              </div>
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
+                <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                <span>Checagem de avarias, hodômetro, pneus, aros e desgaste interno</span>
+              </div>
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
+                <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                <span>Identificação com fotos de 45° e vídeo completo sob solicitação</span>
+              </div>
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
+                <CheckCircle2 className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                <span>Opção completa com scanner total e estetoscópio (R$ 460,00)</span>
+              </div>
+            </div>
+
+            {/* Trust Badges Strip from Flyers */}
+            <div className="flex flex-wrap items-center gap-3 mb-8 text-xs text-neutral-300">
+              <span className="flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-lg">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#d4af37]" />
+                <span>Compra 100% Segura</span>
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-lg">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#34A853]" />
+                <span>Facilitado via Mercado Pago</span>
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-lg">
+                <Award className="w-3.5 h-3.5 text-[#d4af37]" />
+                <span>Serviço Verificado & Confiável</span>
+              </span>
             </div>
 
             {/* CTA Button Block */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
-                href={CONTACT_INFO.whatsappLink}
+                href={CONTACT_INFO.whatsappSimLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-extrabold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-xl shadow-xl shadow-[#25D366]/25 hover:shadow-[#25D366]/40 transition-all duration-300 transform hover:-translate-y-0.5 pulse-whatsapp"
               >
                 <MessageCircle className="w-6 h-6 fill-white" />
-                <span>Entrar em Contato</span>
+                <span>Enviar "SIM" no WhatsApp</span>
               </a>
 
               <a
-                href="#servicos"
+                href="#planos"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-bold text-neutral-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all duration-200"
               >
                 <Search className="w-4 h-4 text-[#d4af37]" />
-                <span>Ver Todos os Serviços</span>
+                <span>Ver Planos: R$ 260 e R$ 460</span>
               </a>
             </div>
           </div>
@@ -145,16 +176,17 @@ export default function Hero() {
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-900">
                   <img
                     src={OFFICIAL_ASSETS.generated.hero}
-                    alt="Especialista realizando vistoria pericial automotiva"
+                    alt="Especialista com jaleco América Latina realizando vistoria pericial automotiva"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   
                   {/* Floating Price Tag on Image */}
-                  <div className="absolute top-4 right-4 bg-black/85 backdrop-blur-md border border-[#d4af37]/50 px-3.5 py-1.5 rounded-xl shadow-lg">
-                    <span className="text-[10px] text-neutral-400 uppercase tracking-wider block">Vistoria Completa</span>
-                    <span className="text-lg font-black text-[#d4af37]">R$ 260,00</span>
+                  <div className="absolute top-4 right-4 bg-black/90 backdrop-blur-md border border-[#d4af37]/50 px-3.5 py-1.5 rounded-xl shadow-lg text-right">
+                    <span className="text-[10px] text-neutral-400 uppercase tracking-wider block">Vistorias</span>
+                    <span className="text-base font-black text-[#d4af37]">A partir de R$ 260</span>
+                    <span className="text-[10px] text-neutral-300 block">Completa: R$ 460,00</span>
                   </div>
 
                   {/* Bottom Image Overlay Badges */}
@@ -165,7 +197,7 @@ export default function Hero() {
                     </span>
                     <span className="bg-black/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-1.5 text-neutral-300">
                       <Clock className="w-3.5 h-3.5 text-[#d4af37]" />
-                      Laudo em até 3h
+                      Vamos até o Local
                     </span>
                   </div>
                 </div>
@@ -173,17 +205,17 @@ export default function Hero() {
                 {/* Secondary Inspection Info Strip */}
                 <div className="p-4 pt-4 grid grid-cols-2 gap-3 text-left">
                   <div className="bg-black/50 border border-white/5 rounded-xl p-3">
-                    <span className="text-[11px] text-neutral-400 block mb-0.5">Laboratório Pericial</span>
+                    <span className="text-[11px] text-neutral-400 block mb-0.5">Pagamento Facilitado</span>
                     <span className="text-xs font-bold text-white flex items-center gap-1">
                       <FileCheck className="w-3.5 h-3.5 text-[#d4af37]" />
-                      28 Testes Físicos
+                      Via Mercado Pago
                     </span>
                   </div>
                   <div className="bg-black/50 border border-white/5 rounded-xl p-3">
-                    <span className="text-[11px] text-neutral-400 block mb-0.5">Atendimento</span>
+                    <span className="text-[11px] text-neutral-400 block mb-0.5">Atendimento Ágil</span>
                     <span className="text-xs font-bold text-emerald-400 flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping" />
-                      Horários Disponíveis
+                      Envie "SIM" no WhatsApp
                     </span>
                   </div>
                 </div>

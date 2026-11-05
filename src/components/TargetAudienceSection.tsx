@@ -81,7 +81,11 @@ export default function TargetAudienceSection() {
 
               {/* Action Button */}
               <a
-                href={CONTACT_INFO.whatsappDirectMessage(`Olá! Sou do segmento de ${item.title} e gostaria de solicitar um atendimento pericial.`)}
+                href={CONTACT_INFO.whatsappDirectMessage(
+                  index === 3
+                    ? 'SIM! Gostaria de agendar vistoria (a partir de R$ 260 estrutural ou R$ 460 completa).'
+                    : `SIM! Sou do segmento de ${item.title} e gostaria de solicitar atendimento pericial.`
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold transition-all ${
@@ -95,6 +99,36 @@ export default function TargetAudienceSection() {
               </a>
             </div>
           ))}
+        </div>
+
+        {/* Corporate Specialty Banner from Flyer 3 */}
+        <div className="mt-12 bg-gradient-to-r from-[#181818] via-[#1c1810] to-[#181818] border border-[#d4af37]/40 rounded-2xl p-6 sm:p-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2">
+              <span className="text-xs font-bold text-[#d4af37] uppercase tracking-wider block">
+                VISTORIA CAUTELAR COMPLETA (R$ 460,00) · ESPECIAL PARA:
+              </span>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {['Seguradoras', 'Bancos e Financeiras', 'Cooperativas de Crédito', 'Empresas de Frotas', 'Compras Corporativas', 'Garantias Contratuais'].map((sector, sIdx) => (
+                  <span key={sIdx} className="text-xs font-medium bg-black/60 border border-white/10 px-3 py-1 rounded-lg text-neutral-200">
+                    ✓ {sector}
+                  </span>
+                ))}
+              </div>
+              <p className="text-xs text-neutral-400 pt-2 leading-relaxed">
+                Observando critérios técnicos reconhecidos pelos conselhos e normas aplicáveis à atividade pericial. Maior profundidade de análise, responsabilidade técnica e confiabilidade documental.
+              </p>
+            </div>
+
+            <a
+              href={CONTACT_INFO.whatsappDirectMessage('SIM! Gostaria de atendimento corporativo para Vistoria Cautelar Completa (R$ 460).')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap px-6 py-3.5 text-xs sm:text-sm font-bold text-black bg-[#d4af37] hover:bg-[#f3cf65] rounded-xl transition-all shadow-lg shrink-0"
+            >
+              Atendimento Corporativo
+            </a>
+          </div>
         </div>
       </div>
     </section>

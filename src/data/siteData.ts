@@ -61,6 +61,11 @@ export const OFFICIAL_ASSETS = {
   serviceImg2: 'https://americalatinapericias.com.br/wp-content/uploads/2024/09/3-2.png.webp',
   serviceImg3: 'https://americalatinapericias.com.br/wp-content/uploads/2024/09/4-3.png.webp',
   serviceImg4: 'https://americalatinapericias.com.br/wp-content/uploads/2024/09/5-4.png.webp',
+  flyers: {
+    flyer1: '/assets/aistudio/image_ee337a31.png',
+    flyer2: '/assets/aistudio/image_b0d6052d.png',
+    flyer3: '/assets/aistudio/image_69a05759.png'
+  },
   generated: {
     avatar: avatarImg,
     hero: heroImg,
@@ -80,9 +85,10 @@ export const CONTACT_INFO = {
     { label: '(53) 98118-7344 (Plantão Vistorias)', value: '53981187344' },
     { label: '(53) 99157-5281 (Laudos Judiciais)', value: '53991575281' }
   ],
-  whatsappLink: 'https://api.whatsapp.com/send?phone=53981007069&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20America%20Latina',
+  whatsappLink: 'https://api.whatsapp.com/send?phone=53981007069&text=SIM',
+  whatsappSimLink: 'https://api.whatsapp.com/send?phone=53981007069&text=SIM',
   whatsappDirectMessage: (customText?: string) => {
-    const text = customText || 'Olá! Gostaria de agendar uma vistoria cautelar na América Latina Perícias.';
+    const text = customText || 'SIM';
     return `https://api.whatsapp.com/send?phone=53981007069&text=${encodeURIComponent(text)}`;
   },
   instagramUrl: 'https://www.instagram.com/americalatinapericias/',
@@ -94,7 +100,91 @@ export const CONTACT_INFO = {
   experienceYears: 46,
   googleRating: 5.0,
   googleReviewCount: 128,
-  standardPrice: 'R$ 260,00'
+  priceStartingAt: 'R$ 260,00',
+  fullPrice: 'R$ 460,00',
+  standardPrice: 'A partir de R$ 260,00'
+};
+
+export const FLYER_PLANS = {
+  slogan: 'A VISTORIA CAUTELAR MAIS TÉCNICA DO BRASIL.',
+  onSiteServiceText: 'Agilizamos seu laudo cautelar, vamos até o local.',
+  structuralPlan: {
+    id: 'estrutural',
+    name: 'Vistoria Cautelar Estrutural',
+    price: 'R$ 260,00',
+    priceNumeric: 260,
+    tagline: 'Por apenas R$ 260,00',
+    description: 'Análise minuciosa de estrutura monobloco, espessura de pintura, conferência de originalidade e integridade física/documental.',
+    includedServices: [
+      'Identificação do veículo com imagens em ângulo de 45°',
+      'Análise de pintura peça por peça com medidor digital e detector magnético',
+      'Verificação do motor (contaminação de fluidos)',
+      'Teste de enchente e detecção de clonagem veicular',
+      'Conferência de numerações (chassi, motor) e etiquetas de segurança',
+      'Avaliação estrutural e conferência da originalidade dos vidros',
+      'Checagem de luzes de avaria (incluindo possíveis fraudes no painel)',
+      'Leitura de hodômetro atual',
+      'Análise de desgaste interno (bancos, forração, multimídia e comandos)',
+      'Teste de ar-condicionado e eficiência térmica',
+      'Verificação completa dos pneus (ano de fabricação e desgaste individual)',
+      'Inspeção individual dos aros e rodas com imagens detalhadas',
+      'Consulta documental completa de histórico e restrições',
+      'Vídeo completo do veículo (parte interna e externa, sob solicitação)'
+    ],
+    badges: [
+      'Compra 100% Segura',
+      'Pagamento Facilitado via Mercado Pago',
+      'Serviço Verificado e Confiável',
+      'Atendimento Ágil - Vamos até o Local'
+    ]
+  },
+  additionalAddon: {
+    name: 'Opção Adicional de Motor & Eletrônica',
+    price: '+ R$ 200,00',
+    description: 'Acréscimo de apenas R$ 200,00 para transformar sua vistoria na mais completa do mercado.',
+    features: [
+      'Análise detalhada do motor com estetoscópio acústico',
+      'Diagnóstico eletrônico total via scanner automotivo multimarcas',
+      'Teste de vida útil da bateria e medição CCA',
+      'Hodometria e telemetria profunda via scanner (verificação contra fraudes)',
+      'Controle e auditoria do histórico de manutenções'
+    ]
+  },
+  fullPlan: {
+    id: 'completa',
+    name: 'Vistoria Cautelar Completa',
+    price: 'R$ 460,00',
+    priceNumeric: 460,
+    target: 'Para Linha Leve',
+    tagline: 'Apenas R$ 460,00',
+    description: 'Laudo técnico completo com o mais elevado padrão de responsabilidade pericial, observando critérios técnicos reconhecidos pelos conselhos e normas aplicáveis.',
+    pillars: [
+      {
+        title: 'Laudos Técnicos Completos',
+        desc: 'Com elevado padrão de responsabilidade pericial e fé pública.'
+      },
+      {
+        title: 'Critérios Técnicos Reconhecidos',
+        desc: 'Observando normas e conselhos aplicáveis à atividade pericial.'
+      },
+      {
+        title: 'Maior Profundidade de Análise',
+        desc: 'Análise detalhada e criteriosa em cada etapa da vistoria.'
+      },
+      {
+        title: 'Maior Confiabilidade Documental',
+        desc: 'Laudos com alto grau de confiabilidade para decisões seguras.'
+      }
+    ],
+    specialFor: [
+      'Seguradoras',
+      'Bancos e Financeiras',
+      'Cooperativas de Crédito',
+      'Empresas de Frotas',
+      'Compras Corporativas',
+      'Garantias Contratuais'
+    ]
+  }
 };
 
 export const SERVICES_DATA: ServiceItem[] = [
@@ -109,22 +199,22 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Medição 3D do esquadro da carroceria',
       'Identificação de cortes e emendas estruturais'
     ],
-    tag: 'Mais Solicitado',
+    tag: 'A partir de R$ 260,00',
     iconName: 'ShieldCheck',
     imageUrl: OFFICIAL_ASSETS.generated.structural
   },
   {
     id: 'vistorias-cautelares',
     title: 'Vistorias Cautelares',
-    shortDescription: 'Verifica histórico documental completo e as reais condições físicas e mecânicas do veículo.',
-    fullDescription: 'Avaliação indispensável para compra e venda segura. Análise cadastral profunda contra bases governamentais e de seguradoras, cruzada com 28 testes físicos no pátio pericial.',
+    shortDescription: 'A vistoria mais técnica do Brasil: documental, física, estrutural e opção completa com scanner e motor.',
+    fullDescription: 'Avaliação indispensável para compra e venda segura. Do pacote estrutural (R$ 260) ao laudo completo (R$ 460 com scanner e análise de motor), cobrindo 28 testes físicos e verificação minuciosa.',
     highlights: [
-      'Histórico de leilão, sinistros e perda total',
-      'Conferência minuciosa de chassi, motor e câmbio',
-      'Checagem de etiquetas ópticas e numerações de vidro',
-      'Teste de espessura de pintura peça por peça'
+      'Vistoria Estrutural por apenas R$ 260,00',
+      'Vistoria Completa com Scanner por R$ 460,00',
+      'Medição de pintura peça por peça (digital + magnético)',
+      'Atendimento ágil e prático: vamos até o local'
     ],
-    tag: 'Apenas R$ 260,00',
+    tag: 'R$ 260 a R$ 460',
     iconName: 'FileCheck',
     imageUrl: OFFICIAL_ASSETS.generated.cautelar
   },
@@ -364,26 +454,26 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const FAQS: FaqItem[] = [
   {
     question: 'Qual o valor da vistoria cautelar?',
-    answer: 'A nossa Vistoria Cautelar Estrutural completa custa a partir de apenas R$ 260,00 a R$ 300,00 para linha leve. É um investimento mínimo que evita prejuízos que podem ultrapassar dezenas de milhares de reais na compra de um carro com defeitos ocultos ou restrições legais.'
+    answer: 'Nossos valores iniciam a partir de apenas R$ 260,00 na Vistoria Cautelar Estrutural (que inclui análise de pintura com medidor digital peça por peça, verificação de fluidos, teste de enchente, detecção de clonagem, chassi, vidros, hodômetro, ar-condicionado, pneus, rodas e consulta documental). Para quem deseja a Vistoria Cautelar Completa da Linha Leve, com análise detalhada do motor com estetoscópio, scanner eletrônico total multimarcas e controle de manutenções, o valor é de R$ 460,00 (ou acréscimo de R$ 200,00 sobre o pacote estrutural).'
   },
   {
-    question: 'Quanto tempo demora a vistoria do veículo?',
-    answer: 'O processo pericial completo leva em média de 1 a 3 horas. Nós realizamos uma bateria rigorosa de medições (peça por peça com micrômetro de pintura, testes de esquadro, scanner eletrônico, estepe, pneus, rodas, conferência de numerações e histórico documental). Não fazemos checagens apressadas para garantir 100% de precisão.'
+    question: 'Vocês realizam atendimento no local onde está o veículo?',
+    answer: 'Sim! Nosso atendimento é ágil e prático: agilizamos seu laudo cautelar e vamos até o local onde o veículo se encontra (lojas, concessionárias ou residências), ou realizamos a perícia na nossa matriz na R. Santos Dumont, 551 - Centro, Pelotas - RS.'
+  },
+  {
+    question: 'Quais são as formas de pagamento?',
+    answer: 'Oferecemos pagamento facilitado via Mercado Pago com compra 100% segura, além de PIX, cartões de crédito e débito, e dinheiro.'
+  },
+  {
+    question: 'Quanto tempo demora a vistoria e a entrega do laudo?',
+    answer: 'O processo pericial completo leva em média de 1 a 2 horas. Entregamos o laudo técnico completo oficial no mesmo dia (em PDF para visualização imediata no celular e versão impressa), acompanhado de imagens em ângulo de 45° e vídeo completo sob solicitação.'
   },
   {
     question: 'Quais tipos de veículos a América Latina atende?',
-    answer: 'Atendemos linha leve (carros de passeio, SUVs, hatches e sedãs), linha pesada (caminhões, carretas, ônibus e utilitários), máquinas agrícolas (tratores e colheitadeiras) e embarcações. Temos equipamentos periciais calibrados para cada categoria.'
+    answer: 'Atendemos linha leve (carros de passeio, SUVs, hatches e sedãs), além de frotas corporativas, bancos, financeiras, seguradoras, linha pesada, máquinas agrícolas e embarcações com equipamentos periciais calibrados.'
   },
   {
-    question: 'Vocês emitem laudo pericial oficial?',
-    answer: 'Sim! Emitimos laudo pericial técnico completo, emitido em formato digital (PDF para envio imediato) e impresso, com registro fotográfico em alta resolução de todas as peças analisadas, conferência de chassi e motor, além do parecer conclusivo do perito responsável.'
-  },
-  {
-    question: 'Quais outros serviços especializados vocês oferecem?',
-    answer: 'Além da vistoria cautelar pré-compra, realizamos Laudos Judiciais e Extrajudiciais, atuação como Assistente Técnico em Perícias Judiciais, Precificação oficial de bens para inventários e partilhas, Reconstituição e Simulação Científica de Acidentes de Trânsito, e Auditoria técnica de Frotas Públicas e Privadas.'
-  },
-  {
-    question: 'Como agendar minha vistoria?',
-    answer: 'O agendamento é extremamente ágil e simples! Basta clicar em qualquer botão de WhatsApp deste site ou entrar em contato pelo telefone (53) 98100-7069 / (53) 98118-7344. Nossa equipe confirma seu horário e você é atendido sem filas na R. Santos Dumont, 551 - Centro, Pelotas - RS.'
+    question: 'Como agendar rapidamente pelo WhatsApp?',
+    answer: 'Basta enviar a mensagem "SIM" para o nosso WhatsApp (53) 98100-7069 ou clicar em qualquer botão do site para ser atendido na hora pela nossa equipe técnica!'
   }
 ];

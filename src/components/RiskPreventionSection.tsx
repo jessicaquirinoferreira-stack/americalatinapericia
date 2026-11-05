@@ -92,18 +92,22 @@ export default function RiskPreventionSection() {
           </div>
 
           <div className="lg:col-span-4 flex flex-col items-center justify-center bg-black/50 border border-white/10 rounded-2xl p-6 text-center">
-            <span className="text-xs text-neutral-400 mb-1">Vistoria Cautelar Completa</span>
-            <span className="font-heading text-3xl font-black text-[#d4af37] mb-4">
-              R$ 260,00
-            </span>
+            <span className="text-xs text-neutral-400 mb-1">Vistorias Cautelares</span>
+            <div className="mb-3">
+              <span className="text-xs text-neutral-300 block">A partir de</span>
+              <span className="font-heading text-3xl font-black text-[#d4af37]">
+                R$ 260,00
+              </span>
+              <span className="text-[11px] text-neutral-400 block mt-0.5">Vistoria Completa por R$ 460,00</span>
+            </div>
             <a
-              href={CONTACT_INFO.whatsappDirectMessage('Olá! Quero agendar a vistoria cautelar estrutural completa de R$ 260.')}
+              href={CONTACT_INFO.whatsappDirectMessage('SIM! Quero agendar a vistoria cautelar (a partir de R$ 260).')}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-xl shadow-lg transition-all"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
-              <span>Agendar Minha Vistoria</span>
+              <span>Enviar "SIM" no WhatsApp</span>
             </a>
           </div>
         </div>

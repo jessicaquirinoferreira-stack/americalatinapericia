@@ -18,6 +18,7 @@ export default function Navbar() {
     { label: 'Início', href: '#inicio' },
     { label: 'Certificado Google', href: '#google-certificado' },
     { label: 'Serviços', href: '#servicos' },
+    { label: 'Planos & Valores', href: '#precos' },
     { label: 'Para quem é', href: '#para-quem-e' },
     { label: 'Riscos', href: '#riscos' },
     { label: 'Equipamentos', href: '#equipamentos' },
